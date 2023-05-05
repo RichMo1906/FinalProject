@@ -5,9 +5,9 @@ import java.util.*;
 public class CryptologyReadFile {
     public static void main(String[] args) throws IOException {
 
-        String textFile = "C:/Users/rmorris/IdeaProjects/FinalProject2/com/example/finalproject/demo.txt";
-        String encryptedFile = "C:/Users/rmorris/IdeaProjects/FinalProject2/com/example/finalproject/encryptedfile.txt";
-        String decryptedFile = "C:/Users/rmorris/IdeaProjects/FinalProject2/com/example/finalproject/decryptedfile.txt";
+        String textFile = "demo.txt";
+        String encryptedFile = "encryptedfile.txt";
+        String decryptedFile = "decryptedfile.txt";
 
         char[] chrCheck = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q',
                 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K',
@@ -66,7 +66,7 @@ public class CryptologyReadFile {
                                 chrOut = chrCheck[indx];
                                 arrayOut[i] = chrOut;
 
-                            } else if (j > displacement){
+                            } else {
                                 indx = key - Math.abs(chrCheck.length - j);
                                 chrOut = chrCheck[indx];
                                 arrayOut[i] = chrOut;
@@ -109,7 +109,7 @@ public class CryptologyReadFile {
                                             chrOut = chrCheck[indx];
                                             arrayOut[i] = chrOut;
 
-                                        } else if (j < key){
+                                        } else {
                                             indx = chrCheck.length - (key - j);
                                             chrOut = chrCheck[Math.abs(indx)];
                                             arrayOut[i] = chrOut;
