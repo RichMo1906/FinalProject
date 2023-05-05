@@ -1,5 +1,5 @@
 import java.io.*;
-import java.nio.*;
+//import java.nio.*;
 import java.util.*;
 
 public class CryptologyReadFile {
@@ -21,9 +21,8 @@ public class CryptologyReadFile {
         char chrOut;
 
         int key = 7;
-        int indx = 0;
-        int indx2 = 0;
-        int displacement = 0;
+        int indx;
+        int displacement;
 
         displacement = chrCheck.length - key;
 
@@ -141,12 +140,12 @@ public class CryptologyReadFile {
         }  catch (Exception e) {
             e.getStackTrace();
             }
-//  Lets write the output files
+//  Let's write the output files
     if (decrEncrChoice.equalsIgnoreCase("Encrypt")) {
 
     //Output encrypted file
 
-            System.out.println("");
+            System.out.println();
             System.out.println("Writing to file");
 
             FileWriter myWriter = new FileWriter(encryptedFile);
@@ -158,11 +157,10 @@ public class CryptologyReadFile {
 
                 BufferedWriter writer = new BufferedWriter(myWriter);
 
-                for ( int i = 0; i < encryptOut.length; i++){
-
-                    if (encryptOut[i] != '\u0000') {
-                        System.out.print(encryptOut[i]);
-                        writer.write(encryptOut[i]);
+                for (char encrptChr : encryptOut){
+                    if (!(encrptChr =='\u0000')){
+                        System.out.print(encrptChr);
+                        writer.write(encrptChr);
                     }
                 }
                 System.out.println();
@@ -188,13 +186,11 @@ public class CryptologyReadFile {
 
                 BufferedWriter writer = new BufferedWriter(myWriter);
 
-                for ( int i = 0; i < decryptOut.length - 1; i++)
-                {
-                    if (decryptOut[i] != '\u0000') {
-                        System.out.print(decryptOut[i]);
-                        writer.write(decryptOut[i]);
+                for (char decrptChr : decryptOut){
+                    if (!(decrptChr =='\u0000')){
+                        System.out.print(decrptChr);
+                        writer.write(decrptChr);
                     }
-
                 }
                 writer.close();
 
